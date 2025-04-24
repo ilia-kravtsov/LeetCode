@@ -62,3 +62,10 @@ var runningSum = function(nums) {
     }
     return nums
 };
+
+// or 
+
+function runningSum(nums) {
+  let sum = 0;
+  return nums.map((num) => (sum += num));
+}
