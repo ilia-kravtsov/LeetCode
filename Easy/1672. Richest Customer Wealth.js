@@ -50,3 +50,14 @@ var maximumWealth = function(accounts) {
     }
     return wealth
 };
+
+// after long break I decided to solve that task again, it turned out pretty similar :D
+
+function maximumWealth(accounts) {
+  let max = 0;
+  for (let i = 0; i < accounts.length; i++) {
+    const accountSum = accounts[i].reduce((acc, curr) => acc + curr);
+    if (accountSum > max) max = accountSum;
+  }
+  return max;
+}
