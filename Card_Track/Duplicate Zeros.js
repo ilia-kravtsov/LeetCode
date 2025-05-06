@@ -20,7 +20,9 @@ Constraints:
 0 <= arr[i] <= 9
 */
 
-function duplicateZeros(arr) {
+// Runtime: 4 ms Memory Usage: 57.2 MB
+
+function duplicateZeros_1(arr) {
   let zeros = 0;
   const n = arr.length;
 
@@ -39,5 +41,18 @@ function duplicateZeros(arr) {
         arr[i + zeros] = 0;
       }
     }
+  }
+}
+
+// Runtime: 2 ms Memory Usage: 57.9 MB
+
+function duplicateZeros_2(arr) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 0) result.push(0);
+    result.push(arr[i]);
+  }
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = result[i];
   }
 }
