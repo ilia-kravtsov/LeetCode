@@ -73,3 +73,15 @@ function removeDuplicates_2(nums) {
   }
   return k;
 };
+
+// Runtime: 0 ms Memory Usage: 56.5 MB
+function removeDuplicates_pointers(nums) {
+  let writePointer = 1;
+  for (let readPointer = 1; readPointer < nums.length; readPointer++) {
+    if (nums[readPointer] !== nums[readPointer - 1]) {
+      nums[writePointer] = nums[readPointer];
+      writePointer++;
+    }
+  }
+  return writePointer;
+}
